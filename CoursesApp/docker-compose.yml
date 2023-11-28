@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    container_name: 'Studia-aplikacja'
+    image: 'mcr.microsoft.com/mssql/server:2019-latest'
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: 'TwojeMocneHasło123'
+      MSSQL_PID: 'Express' 
+      MSSQL_DB: 'CoursesDb'
+      MSSQL_USER: 'User'
+      MSSQL_SA_PASSWORD: 'TwojeMocneHasło123'
+    ports:
+      - '1433:1433' 
