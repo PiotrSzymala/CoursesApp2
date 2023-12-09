@@ -1,0 +1,16 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "MsSqlConnectionString": "Server=localhost,1433;Database=CoursesDb;User Id=sa;Password=TwojeMocneHasło123;Encrypt=False;"
+  },
+  "Jwt": {
+    "Issuer": "https://fewfwe.cloud",
+    "Audience": "https://fewfew.cloud",
+    "Key": "12342342433242134234234231413241234231423433"
+  }
+}
