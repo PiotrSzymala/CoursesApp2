@@ -13,7 +13,7 @@ using System.Text.Json;
 
 namespace CoursesApp
 {
-    public class Program
+    public partial class Program
     {
         public static void Main(string[] args)
         {
@@ -147,4 +147,9 @@ namespace CoursesApp
             app.Run();
         }
     }
+}
+
+namespace CoursesApp
+{
+    public partial class Program {}
 }
