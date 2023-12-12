@@ -33,7 +33,6 @@ namespace CoursesApp.Models
 
         public SignupMessage SignupMessage { get; set; }
 
-        [ForeignKey("CourseCategoryId")]
         public CoursesCategory CoursesCategory { get; set; }
 
         public ICollection<Payment> Payments { get; set; }

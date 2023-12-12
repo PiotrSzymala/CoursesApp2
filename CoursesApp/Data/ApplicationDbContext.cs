@@ -34,6 +34,11 @@ namespace CoursesApp.Data
                 .HasMany(u => u.Signups)
                 .WithOne(s => s.User)
                 .HasForeignKey(s => s.UserId);
+            
+            modelBuilder.Entity<Signup>()
+                .HasOne(s => s.CourseDate)
+                .WithMany()
+                .HasForeignKey(s => s.CourseDateId);
 
             modelBuilder.Entity<Course>()
                 .HasMany(c => c.Signups)
@@ -60,6 +65,10 @@ namespace CoursesApp.Data
                 .WithOne(sm => sm.Course)
                 .HasForeignKey<Course>(c => c.SignupMessageId);
 
+            modelBuilder.Entity<Course>()
+                .Property(c => c.Price)
+                .HasColumnType("decimal(18, 2)");
+
             modelBuilder.Entity<Signup>()
                 .HasOne(s => s.CourseDate)
                 .WithMany()
@@ -84,7 +93,6 @@ namespace CoursesApp.Data
                 .HasOne(p => p.User)
                 .WithMany(u => u.Payments)
                 .HasForeignKey(p => p.UserId);
-
         }
     }
 }

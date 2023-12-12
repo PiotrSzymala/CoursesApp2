@@ -27,8 +27,6 @@ namespace CoursesApp.Models
         [Required]
         public DateTime ExpiresIn { get; set; }
 
-        // Assuming CourseDate has a primary key of type int
-        [ForeignKey("CourseDateId")]
         public CourseDate CourseDate { get; set; }
     }
 }

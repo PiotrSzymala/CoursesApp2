@@ -5,22 +5,11 @@ namespace CoursesApp.Models
 {
     public class User : IdentityUser
     {
-        public int Id { get; set; }
-
         [Required]
         public string Firstname { get; set; }
 
         [Required]
         public string Lastname { get; set; }
-
-        [Required]
-        [EmailAddress]
-        [MaxLength(100)]
-        public string Email { get; set; }
-
-        [Required]
-        [MinLength(8)]
-        public string Password { get; set; }
 
         [Required]
         [MaxLength(250)]
