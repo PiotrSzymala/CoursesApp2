@@ -9,12 +9,13 @@ namespace CoursesApp.Models
         public int PostId { get; set; }
 
         [Required]
-        [ForeignKey("User")] // This establishes the link to the User entity.
-        public string UserId { get; set; }
+        [ForeignKey("User")]
+        public string UserId { get; set; } // Zmiana na string, aby pasowało do klucza głównego User
+
         public User User { get; set; }
 
         [Required]
-        [ForeignKey("ForumCategory")] // This establishes the link to the ForumCategory entity.
+        [ForeignKey("ForumCategory")]
         public int CategoryId { get; set; }
         public ForumCategory ForumCategory { get; set; }
 

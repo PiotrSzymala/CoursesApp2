@@ -22,6 +22,8 @@ namespace CoursesApp.Data
         public DbSet<CourseDate> CourseDates { get; set; }
         public DbSet<ForumPost> ForumPosts { get; set; }
         public DbSet<ForumCategory> ForumCategories { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -74,6 +76,11 @@ namespace CoursesApp.Data
                 .HasMany(u => u.ForumPosts)
                 .WithOne(fp => fp.User)
                 .HasForeignKey(fp => fp.UserId);
+
+            modelBuilder.Entity<Role>()
+                .Property(u => u.Name)
+                .IsRequired();
+
 
             modelBuilder.Entity<ForumCategory>()
                 .HasMany(fc => fc.ForumPosts)

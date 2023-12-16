@@ -1,11 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace CoursesApp.Models
 {
-    public class User : IdentityUser
+    public class User : IdentityUser<string> // Zmiana IdentityUser<int> na IdentityUser<string>
     {
-        public int Id { get; set; }
+        // Usuń to pole Id, ponieważ IdentityUser już posiada Id.
 
         [Required]
         public string Firstname { get; set; }
@@ -28,6 +30,12 @@ namespace CoursesApp.Models
 
         [Required]
         public DateTime RegisteredAt { get; set; }
+
+        [Required]
+        public int RoleID { get; set; }
+
+        [Required]
+        public virtual Role Role { get; set; }
 
         public ICollection<Signup> Signups { get; set; }
 
